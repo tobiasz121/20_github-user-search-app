@@ -172,9 +172,14 @@ h1 > span {
 
 .typo-grid {
     grid-template-columns: 2fr 3fr;
+    column-gap: 4rem;
 }
 
 .typo-headers {
     --flow-space:2.5rem
+}
+
+.typo-body {
+    --flow-space:1rem
 }
 
