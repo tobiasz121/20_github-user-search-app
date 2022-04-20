@@ -130,6 +130,10 @@ button {
     padding-right: 3rem;
 }
 
+.hidden {
+    display: none;
+}
+
 /* Components */
 
 .palette {
@@ -144,6 +148,57 @@ button {
     top: 50%;
     left:10%;
 }
+
+.search-bar {
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 1rem;    
+    box-shadow: 0px 8px 20px -8px rgba(116, 162, 165, 1);
+}
+
+.search-bar > button {
+    padding: 0.5rem;
+    margin-left: auto;
+    background-color: hsl(var(--clr-blue));
+    color: hsl(var(--clr-white));
+    font-weight: 700;
+    font-family: var(--ff-space);
+    font-size: var(--fs-400);
+    border: none;
+    border-radius: 1rem;
+    padding-block: 1rem;
+    padding-inline: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.search-bar > input::placeholder {
+   color: hsl(var(--clr-l-violet))
+}
+
+.search-bar > input.bg-dark-blue::placeholder {
+    color:hsl(var(--clr-white))
+}
+
+.search-bar > input {
+    flex-grow: 1;
+    border: none;
+    font-family: var(--ff-space);   
+    font-size: 1.125rem;
+    font-weight: 400;
+    padding: 0; 
+    padding-left: 2rem;
+}
+
+
+.search-bar > input:focus {
+    outline:none   
+}
+
+.search-bar > img {
+    padding-left: 1.5rem;  
+}
+
+
 
 /* Layout */
 
@@ -181,5 +236,22 @@ h1 > span {
 
 .typo-body {
     --flow-space:1rem
+}
+
+/* Interactive layout  */
+
+.interactive-grid {
+    grid-template-columns: repeat(2,1fr);
+    gap:1rem;
+    row-gap: 4rem;
+}
+
+.search {
+    --flow-space: 2rem
+}
+
+.search-state {
+    text-align: center;
+    color: hsl(var(--clr-l-violet))
 }
 
