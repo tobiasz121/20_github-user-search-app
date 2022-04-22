@@ -3,26 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | GitHub user search app</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./starter-code/assets/favicon-32x32.png">
+  <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">  
+  <title>GitHub user search app </title>
 </head>
 <body>
+  <main class="container">
+    <header class="header flex">
+      <p class="fs-700 fw-bold ff-space text-l-dark">devfinder</p>
+      <div class="light flex flex--align-center">
+        <p class="uppercase fw-bold text-violet fs-200">Dark</p>
+        <img class="filter-moon" src="./starter-code/assets/icon-moon.svg" alt="">
+      </div>              
+    </header>
+    <section class="search flow">
+      <div class="search-bar flex">
+          <img src="./starter-code/assets/icon-search.svg" alt="">    
+          <input type="text" placeholder="Search Github username...">
+          <p class="hidden">No results</p>
+          <button>Search</button>
+      </div>      
+    </section>
+    <section class="grid info">
+      <img src="./starter-code/assets/icon-sun.svg" alt="">
+      <div class="flex info-details">
+        <div>
+          <h1>The Octocat</h1>
+          <p>@octocat</p>
+        </div>
+        <p>Joined 25 Jan 2011</p>
+      </div>
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
+        <div class="grid info-stats">
+          <p>Repos</p>
+          <p>Followers</p>
+          <p>Following</p>
+          <p>8</p>
+          <p>3839</p>
+          <p>9</p>
+        </div>
+        <div>
 
-  devfinder
-
-  Light
-  Dark
-
-  Search GitHub username...
-  Search
-
-  Joined
-
-  Repos
-  Followers
-  Following
-
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
