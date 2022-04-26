@@ -7,11 +7,21 @@ const joined = document.querySelector('#user-joined')
 const repos = document.querySelector('#user-repos')
 const followers = document.querySelector('#user-followers')
 const following = document.querySelector('#user-following')
+const img = document.querySelector('#user-img')
 
 const month = {
     '01': 'Jan',
     '02': 'Feb',
-    '03': 'Mar'
+    '03': 'Mar',
+    '04': 'Apr',
+    '05': 'May',
+    '06': 'Jun',
+    '07': 'Jul',
+    '08': 'Aug',
+    '09': 'Sep',
+    '10': 'Oct',
+    '11': 'Nov',
+    '12': 'Dec',
 }
 
 console.log(month['02'])
@@ -29,6 +39,7 @@ const getUser = (userId) => {
             login.textContent = `@${data.login}`
             processString(data.created_at)
             repos.textContent = data.public_repos
+            img.src = data.avatar_url
             followers.textContent = data.followers
             following.textContent = data.following
         })

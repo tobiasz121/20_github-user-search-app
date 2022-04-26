@@ -148,9 +148,9 @@ h1 {
 
 
 .container {
-    max-width: 70rem;
+    max-width: 850px;
     margin-inline: auto;
-    padding-inline: 1rem;
+    padding-inline: 1.5rem;
     min-width: 360px;
 }
 
@@ -278,7 +278,8 @@ h1 {
 }
 
 .header {
-    justify-content: space-between;    
+    justify-content: space-between;  
+    margin-bottom: 3rem;  
 }
 
 h1 > span {
@@ -350,14 +351,33 @@ h1 > span {
 
 /* Main Layout */
 
-.info {
+.info {    
+    grid-template-columns: 70px 1fr 1fr 1fr;
     grid-template-areas: 'img details details details'
-                         'rest rest rest rest';
+                         'rest rest rest rest';    
     border-radius: 1rem;
     padding-inline: 1rem;
     padding-block: 2rem;
     row-gap: 2rem;
 }
+
+@media (min-width:500px){
+    .info {
+        grid-template-columns: 120px 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width:740px){
+    .info {
+        grid-template-columns: 120px 1fr;
+        grid-template-areas: 'img details'
+                             'img rest';
+        column-gap: 2rem;
+        row-gap: 1rem;  
+        padding-inline: 3rem;                      
+    }   
+    
+} 
 
 .info > img {
     grid-area: img;
@@ -375,7 +395,16 @@ h1 > span {
     flex-direction: column;
     --flow-space:0.3rem;
     align-self: center;    
+    padding-left: clamp(0.5rem, 5vw, 5rem) ;
     
+}
+
+@media (min-width:740px){
+    .info-details {
+        padding-left: 0;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .info-stats {
@@ -401,23 +430,52 @@ h1 > span {
                          'blog'
                          'twitter'
                          'git';
-    row-gap: 0.3rem;
+    row-gap: 1rem;
+    
+}
+
+@media (min-width:500px){
+    .info-links {
+        grid-template-areas: 'sf twitter'
+                             'blog git';
+    }
 }
 
 #user-img {
-    width:70px;
+    width:70px;    
     aspect-ratio: 1;
     border-radius: 50%;
+    align-self: center;
 }
 
 @media (min-width:500px){
     #user-img {
         width: 120px;
-        
+        align-self: center;
     }
 }
 
+@media (min-width:740px){
+    #user-img {
+        align-self: flex-start;
+    }
+}
 
+.info-links > div.link:first-of-type {
+    grid-area: sf;
+}
+
+.info-links > div.link:nth-of-type(2) {
+    grid-area: blog;
+}
+
+.info-links > div.link:nth-of-type(3) {
+    grid-area: twitter;
+}
+
+.info-links > div.link:nth-of-type(4) {
+    grid-area: git;
+}
 
 
 
