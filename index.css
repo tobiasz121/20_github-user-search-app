@@ -40,6 +40,7 @@
 
 @media (max-width:500px) {
     :root {
+        --fs-600: 1rem;
         --fs-500: 0.8125rem;
         --fs-400: 0.8125rem;
         --fs-300: 0.8125rem;
@@ -78,12 +79,27 @@ picture {
     display: block;
 }
 
+a {
+    text-decoration: none;
+    display: block;
+}
+
 label {
     display: block;
 }
 
 button {
     padding: 0;
+}
+
+h1 {
+    font-size: var(--fs-700);
+}
+
+@media (max-width:500px){
+    h1 {
+        font-size: 1rem;
+    }
 }
 
 /* colors */
@@ -293,7 +309,8 @@ h1 > span {
 }
 
 .search {
-    --flow-space: 2rem
+    --flow-space: 2rem;
+    border-radius: 1rem;
 }
 
 .search-state {
@@ -312,8 +329,12 @@ h1 > span {
 }
 
 .link img {
-    padding-right: 1rem;
+    padding-right: 1rem;    
+    width: 30px;
+    height: auto;  
 }
+
+.link {align-items: center;}
 
 .toggle {
     gap: 5rem;
@@ -330,15 +351,19 @@ h1 > span {
 /* Main Layout */
 
 .info {
-    grid-template-areas: 'img details'
-                         'rest rest';
+    grid-template-areas: 'img details details details'
+                         'rest rest rest rest';
+    border-radius: 1rem;
+    padding-inline: 1rem;
+    padding-block: 2rem;
+    row-gap: 2rem;
 }
 
 .info > img {
     grid-area: img;
 }
 
-.info > div:first-child {
+.info > div:first-of-type {
     grid-area: details;
 }
 
@@ -348,20 +373,51 @@ h1 > span {
 
 .info-details {
     flex-direction: column;
+    --flow-space:0.3rem;
+    align-self: center;    
+    
 }
 
 .info-stats {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
     align-content: center;
     padding-inline: 1.5rem;
-    border: 1px solid red;
+    padding-block: 1rem;    
     border-radius: 1rem;
 }
 
 .info-stats > p {
     text-align: center;
 }
+
+.content {
+    --flow-space: 1rem;
+    border-radius: 1rem;
+}
+
+.info-links {
+    grid-template-areas: 'sf'
+                         'blog'
+                         'twitter'
+                         'git';
+    row-gap: 0.3rem;
+}
+
+#user-img {
+    width:70px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+@media (min-width:500px){
+    #user-img {
+        width: 120px;
+        
+    }
+}
+
+
 
 
 
