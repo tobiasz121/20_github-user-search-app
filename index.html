@@ -11,21 +11,22 @@
   <link rel="stylesheet" href="./index.css">  
   <title>GitHub user search app </title>
   <script src="./index.js" defer></script>
+  <script src="./mode.js" defer></script>
 </head>
 <body class="bg-marine">
   <main class="container">
     <header class="header flex">
-      <p class="fs-700 fw-bold ff-space text-l-dark">devfinder</p>
-      <div class="light flex flex--align-center">
+      <p class="fs-700 fw-bold ff-space text-d-dark">devfinder</p>
+      <button class="light flex flex--align-center">
         <p class="uppercase fw-bold text-violet fs-200">Dark</p>
         <img class="filter-moon" src="./starter-code/assets/icon-moon.svg" alt="">
-      </div>              
+      </button>              
     </header>
     <div class="content flow">    
       <section class="search flow bg-white">
         <div class="search-bar flex">
             <img src="./starter-code/assets/icon-search.svg" alt="">    
-            <input id="search-name" type="text" placeholder="Search Github username...">
+            <input id="search-name" class="fs-500" type="text" placeholder="Search Github username...">
             <p class="hidden">No results</p>
             <button id="search-btn">Search</button>
         </div>      
@@ -34,10 +35,10 @@
         <img src="https://avatars.githubusercontent.com/u/78846581?v=4" id="user-img" alt="">
         <div class="flex info-details flow">
           <div>
-            <h1 class="fw-bold" id="user-name">The Octocat</h1>
+            <h1 class="fw-bold text-d-dark" id="user-name">The Octocat</h1>
             <p class="fs-400 text-blue" id="user-login">@octocat</p>
           </div>
-          <p id="user-joined">Joined 25 Jan 2011</p>
+          <p id="user-joined" class="text-violet">Joined 25 Jan 2011</p>
         </div>
         <div class="flow" style="--flow-space:1.5rem">
           <p class="text-violet" style="line-height: 25px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
@@ -52,19 +53,19 @@
           <div class="grid info-links">
             <div class="flex link" >
               <img src="./starter-code/assets/icon-location.svg" alt="">
-              <a href="https://www.link.com" class="text-violet">San Francisco</p>                
+              <p href="https://www.link.com" class="text-violet" id="place">San Francisco</p>                
             </div>
             <div class="flex link" >
               <img src="./starter-code/assets/icon-website.svg" alt="">
-              <a href="https://github.blog" class="text-violet">https://github.blog</p>                
+              <a href="https://github.blog" class="text-violet" id="blog">https://github.blog</a>                
             </div>
-            <div class="flex link opacity">
+            <div class="flex link">
               <img src="./starter-code/assets/icon-twitter.svg" alt="">
-              <a href="https://twitter.com" class="text-violet">Not available</p>                
+              <a href="https://twitter.com" class="text-violet" id="twitter">Not available</a>                
             </div>
             <div class="flex link">
               <img src="./starter-code/assets/icon-website.svg" alt="">
-              <a href="https://github.com" class="text-violet">@github</p>                
+              <a href="https://github.com" class="text-violet" id="git" target="_blank">@github</a>                
             </div>
           </div>
         <div>        

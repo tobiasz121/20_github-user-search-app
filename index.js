@@ -8,6 +8,11 @@ const repos = document.querySelector('#user-repos')
 const followers = document.querySelector('#user-followers')
 const following = document.querySelector('#user-following')
 const img = document.querySelector('#user-img')
+const twitter = document.querySelector('#twitter')
+const place = document.querySelector('#place')
+const git = document.querySelector('#git')
+const blog = document.querySelector('#blog')
+const links = document.querySelectorAll('.link')
 
 const month = {
     '01': 'Jan',
@@ -26,7 +31,10 @@ const month = {
 
 console.log(month['02'])
 
-searchBtn.addEventListener('click', event => {    
+searchBtn.addEventListener('click', event => {
+    links.forEach(link => {
+        link.classList.remove('opacity')
+    })    
     getUser(user.value)
 })
 
@@ -41,7 +49,14 @@ const getUser = (userId) => {
             repos.textContent = data.public_repos
             img.src = data.avatar_url
             followers.textContent = data.followers
-            following.textContent = data.following
+            following.textContent = data.following            
+            linkTransform(twitter, data.twitter_username)
+            linkTransform(place, data.location)
+            place.textContent = data.location ?? 'Not available'
+            git.textContent = `@${data.login}`
+            git.href = data.html_url
+            linkTransform(blog, data.blog)
+            
         })
 }
 
@@ -51,4 +66,16 @@ const processString = (date) => {
    console.log(time_parts[1])
    joined.textContent = `Joined ${time_parts[2]} ${month[time_parts[1]]} ${time_parts[0]}`
 
+}
+
+const linkTransform = (element, data) => {
+    if (data ===null || data === ''){
+        element.parentNode.classList.add('opacity')
+        element.textContent = 'Not available'
+        element.href = ''
+    }
+    else {
+        element.textContent = data
+        element.href = data
+    }
 }
