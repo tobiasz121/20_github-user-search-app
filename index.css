@@ -490,6 +490,24 @@ h1 > span {
 }
 
 
+/* Search JS */
+
+.search-bar.results::after {
+    content: 'No results';
+    display: block;   
+    position: relative;
+    order: 1;
+    color: hsl(var(--clr-red));
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold);
+    padding-right: 1rem;
+    
+}
+
+#search-btn {
+    order:2
+}
+
 
 
 

@@ -3,6 +3,8 @@ const bgwhite = document.querySelectorAll('.bg-white')
 const input = document.querySelector('input')
 const marine = document.querySelectorAll('.bg-marine')
 const violets = document.querySelectorAll('.text-violet')
+const modeIcon = document.querySelector('.light > img')
+const modeText = document.querySelector('.light > p')
 
 const modeSwitch = document.querySelector('.light')
 modeSwitch.addEventListener('click', event => {
@@ -24,4 +26,16 @@ modeSwitch.addEventListener('click', event => {
         violet.classList.toggle('text-violet')
         violet.classList.toggle('text-white')
     })
+    console.log(modeIcon)
+
+    modeIcon.src = './starter-code/assets/icon-sun.svg'
+    modeIcon.classList.toggle('filter-moon')
+    modeIcon.classList.toggle('filter-white')
+
+    if (modeText.textContent === 'Dark'){
+        modeText.textContent = 'Light'
+    }
+    else {
+        modeText.textContent = 'Dark'
+    }
 })

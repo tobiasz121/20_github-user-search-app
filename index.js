@@ -13,6 +13,7 @@ const place = document.querySelector('#place')
 const git = document.querySelector('#git')
 const blog = document.querySelector('#blog')
 const links = document.querySelectorAll('.link')
+const searchBar = document.querySelector('.search-bar')
 
 const month = {
     '01': 'Jan',
@@ -40,7 +41,18 @@ searchBtn.addEventListener('click', event => {
 
 const getUser = (userId) => {
     fetch(`https://api.github.com/users/${userId}`)
-        .then(response => response.json())
+        .then(response =>{
+            console.log(response.ok)
+            if(response.ok ===false){
+                searchBar.classList.remove('results')
+                searchBar.classList.toggle('results')
+            }
+            else{
+                searchBar.classList.remove('results')
+                return response.json()
+            }
+            
+        })
         .then(data => {
             console.log(data)                    
             name.textContent = data.name
@@ -52,12 +64,12 @@ const getUser = (userId) => {
             following.textContent = data.following            
             linkTransform(twitter, data.twitter_username)
             linkTransform(place, data.location)
-            place.textContent = data.location ?? 'Not available'
-            git.textContent = `@${data.login}`
-            git.href = data.html_url
             linkTransform(blog, data.blog)
+            git.textContent = `@${data.login}`
+            git.href = data.html_url            
             
         })
+        
 }
 
 const processString = (date) => {
