@@ -28,9 +28,17 @@ modeSwitch.addEventListener('click', event => {
     })
     console.log(modeIcon)
 
-    modeIcon.src = './starter-code/assets/icon-sun.svg'
+    if (modeIcon.src = "./starter-code/assets/icon-moon.svg"){
+        modeIcon.src = './starter-code/assets/icon-sun.svg'       
+    }
+    else {
+        modeIcon.src = './starter-code/assets/icon-moon.svg'
+    }
+
     modeIcon.classList.toggle('filter-moon')
     modeIcon.classList.toggle('filter-white')
+
+   
 
     if (modeText.textContent === 'Dark'){
         modeText.textContent = 'Light'
